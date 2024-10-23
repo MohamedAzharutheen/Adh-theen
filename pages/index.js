@@ -1,8 +1,7 @@
 import CategorySection from '@/component/category/category-section'
-import BoxBanner from '@/component/contactus/box-banner'
 import Faqs from '@/component/faq'
 import Banner from '@/component/home/banner'
-import ExperincedGuidence from '@/component/home/experinced-guidence'
+import ValuableClient from '@/component/home/experinced-guidence'
 import HajjGateway from '@/component/home/hajj-gateway'
 import Journey from '@/component/home/journey'
 import Layout from '@/component/layout'
@@ -10,10 +9,7 @@ import OurAchivement from '@/component/our-achivement'
 import PackageCard from '@/component/packages/package-card'
 import ServiceCards from '@/component/services/service-cards'
 import Testimonial from '@/component/slider/testmonial'
-import TestimonialCarousel from '@/component/slider/testmonial'
-import Subscripe from '@/component/subscripe'
 import WeFeelHappy from '@/component/we-feel-happy'
-import WhyChooseAthTheen from '@/component/why-chooseus'
 import React, { useEffect, useState } from 'react'
 
 
@@ -58,18 +54,13 @@ useEffect(()=>{
       <Banner/>
       <WeFeelHappy/>
       <ServiceCards/>
- 
       <HajjGateway/>
-      <ExperincedGuidence/>
+      <ValuableClient />
       <CategorySection/>
-      {/* <WhyChooseAthTheen/> */}
       <OurAchivement/>
       <Journey/>
-      {/* <BoxBanner/> */}
       <Testimonial/>
-
      <Faqs FaqQus={FaqQus}/>
-      {/* <Gallery/> */}
       {isVisible &&
 
       <PackageCard closeCard={closeCard}/>

@@ -57,7 +57,7 @@ export default function WeFeelHappy() {
     <ScrollAnimation
       key={index}
       direction={items.direction}
-      delay={1.2 + index * 0.8}
+      delay={1 + index * 0.8}
     >
       <div className='total-passenger tac'>
         {items.icon && (

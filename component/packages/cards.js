@@ -9,7 +9,7 @@ export default function Cards() {
   return (
    <>
    <section className="mt70 container mb40">
-      <h4 className="fs-33 mfs-24 fw7 tac">Umrah &Hajj Packages 2024-2025</h4>
+      <h4 className="fs-33 mfs24 mlnh41 ls1 fw7 tac">Umrah &Hajj Packages 2024-2025</h4>
       <p className="fs-16 dim-clr pdt24 tac">We provide you with a wide range of Umrah packages from all over India.</p>
    
    <div className="row mt-5">
@@ -25,7 +25,7 @@ export default function Cards() {
 
              <p className="image-title fs-16 fw7 ">Private</p>
              <div className="days">
-               <h6 className="">Days</h6>
+               <h6 className="">14 Days / Night /Makkah /Madhina</h6>
              </div>
            </div>
 
@@ -395,14 +395,13 @@ export default function Cards() {
     position: absolute;
     top: 85%;
     left: 50%;
-    width: auto;
+    width: 80%;
     transform: translateX(-50%);
     background-color: rgba(16, 12, 8, 0.6);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
-    width: fit-content;
     }
     .book-now-btn{
     background: #d0ab17;

@@ -18,7 +18,8 @@ export default function Footers() {
                     <Image src={"/assets/images/logos/logo.svg"} width={180} height={180} alt='Footer-Logo' loading='lazy'/>
           </div>
                 <h6 className='fs-24 lnh33 mt-4'>Want to Perform <span className='fwb'>Umrah With Us</span>  ?</h6>
-                <button className={`fs-16 fw6 slot-btn dim-ylw mt20`}>Book Your Slot</button>
+              <Link href={"/contact"}> <button className={`fs-16 fw6 slot-btn dim-ylw mt20`}>Book Your Slot</button>
+              </Link> 
             </div>
         
          <div className="col-12 col-lg-9 footer-bg pdtb50">

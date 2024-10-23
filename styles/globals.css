@@ -1708,21 +1708,21 @@ color:#FFFFFF99;
 	@media only screen and (max-width: 420px){
 		.active-box-right{
 			background-color: #FFFFFF;
-		  width: 114px;
+		  width: auto;
 		  border-radius: 8px;
 		  box-shadow: 0px 4px 18.6px 0px #00000040;
 		  position: absolute;
 		  top: 60%;
-		  left: 5% !important;
+		  left: -10% !important;
 		  }
 		  .active-box-left{
 			background-color: #FFFFFF;
-			width: 114px;
+			width: auto;
 			border-radius: 8px;
 			box-shadow: 0px 4px 18.6px 0px #00000040;
 			position: absolute;
 			top: 40%;
-			left: 52%;
+			left: 55%;
 		
 			}
 

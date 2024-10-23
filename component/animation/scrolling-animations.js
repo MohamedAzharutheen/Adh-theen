@@ -20,7 +20,7 @@ const ScrollAnimation = ({ children, direction = 'left', delay = 0 ,duration=0.5
     hidden: {
       opacity: 0,
       x: direction === 'left' ? -100 : direction === 'right' ? 100 : 0,
-      y: direction === 'top' ? -100 : direction === 'bottom' ? 100 : 0,
+      // y: direction === 'top' ? -100 : direction === 'bottom' ? 100 : 0,
     },
     visible: {
       opacity: 1,

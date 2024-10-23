@@ -9,13 +9,13 @@ export default function Subscripe() {
         <section className="subscribe-area mt70">
             <div className="container">
                 <div className="subscribe-two theme-bg">
-                 <Image className="cta-shape shape_01" src="/assets/Images/shape/c1.svg" style={{maxWidth:"100%",height:"auto"}} width={232} height={232}   alt="Shape-Circle"/>
-                    <Image className="cta-shape shape_02" src="/assets/Images/shape/c2.svg" style={{maxWidth:"100%",height:"auto"}} width={74} height={74}   alt="Shape-triangle"/>
-                    <Image className="cta-shape shape_03" src="/assets/Images/shape/c3.svg"style={{maxWidth:"100%",height:"auto"}} width={20} height={20}   alt="Shape-Circle"/>
-                    <Image className="cta-shape shape_04" src="/assets/Images/shape/c4.svg" style={{maxWidth:"100%",height:"auto"}} width={74} height={74}  alt="Shape-triangle"/>
-                    <Image className="cta-shape shape_05" src="/assets/Images/shape/c5.svg" style={{maxWidth:"100%",height:"auto"}} width={303} height={272}  alt="Shape-snake"/>
-                    <Image className="cta-shape shape_06" src="/assets/Images/shape/c6.svg" style={{maxWidth:"100%",height:"auto"}} width={112} height={103}  alt="Shape-Circle"/>
-                    <Image className="cta-shape shape_07" src="/assets/Images/shape/c7.svg"style={{maxWidth:"100%",height:"auto"}} width={41} height={38}   alt="Shape-triangle"/>
+                 <Image className="cta-shape shape_01" src="/assets/images/shape/c1.svg" style={{maxWidth:"100%",height:"auto"}} width={232} height={232}   alt="Shape-Circle"/>
+                    <Image className="cta-shape shape_02" src="/assets/images/shape/c2.svg" style={{maxWidth:"100%",height:"auto"}} width={74} height={74}   alt="Shape-triangle"/>
+                    <Image className="cta-shape shape_03" src="/assets/images/shape/c3.svg"style={{maxWidth:"100%",height:"auto"}} width={20} height={20}   alt="Shape-Circle"/>
+                    <Image className="cta-shape shape_04" src="/assets/images/shape/c4.svg" style={{maxWidth:"100%",height:"auto"}} width={74} height={74}  alt="Shape-triangle"/>
+                    <Image className="cta-shape shape_05" src="/assets/images/shape/c5.svg" style={{maxWidth:"100%",height:"auto"}} width={303} height={272}  alt="Shape-snake"/>
+                    <Image className="cta-shape shape_06" src="/assets/images/shape/c6.svg" style={{maxWidth:"100%",height:"auto"}} width={112} height={103}  alt="Shape-Circle"/>
+                    <Image className="cta-shape shape_07" src="/assets/images/shape/c7.svg"style={{maxWidth:"100%",height:"auto"}} width={41} height={38}   alt="Shape-triangle"/>
                     <div className="row align-items-center">
                         <div className="col-xl-6">
                             <div className="subscribe-wrapper text-center text-xl-start mb-30">

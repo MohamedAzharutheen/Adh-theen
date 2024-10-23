@@ -203,7 +203,7 @@ const   EnquiryForm = ({close}) => {
           .sub-btn {
             width: 101px;
             height: 40px;
-            border-radius: 32px;
+            border-radius: 12px;
             background-color: #d0ab17;
             border: none;
             cursor: pointer;
@@ -212,6 +212,16 @@ const   EnquiryForm = ({close}) => {
             width: 295px;
             height: 96px;
           }
+            @media only screen and (max-width: 468px) {
+                .icon-pos{
+        background: #fff;
+        border-radius: 10px;
+        position: absolute;
+        padding: 5px;
+        top: -23% !important;
+        left: 74% !important;
+        }
+            }
           @media only screen and (max-width: 1023px) {
             .form-center {
               z-index: 1000;
@@ -224,7 +234,7 @@ const   EnquiryForm = ({close}) => {
               left: 50%;
               transform: translate(-50%, -50%);
             }
-                                  .icon-pos{
+      .icon-pos{
         background: #fff;
         border-radius: 10px;
         position: absolute;
@@ -243,12 +253,12 @@ const   EnquiryForm = ({close}) => {
             }
             .form-rad-box {
               width: 290px;
-              height: 60px;
+              height: auto;
               border-radius: 25px 25px 0px 0px;
               background-color: #006c35;
               text-align: center;
               padding-top: 15px;
-               padding-bottom: 15px;
+               padding-bottom: 7px;
             }
             .inp-box {
               width: 170px;

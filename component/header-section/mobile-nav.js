@@ -8,6 +8,7 @@ import { MdOutlineFlightTakeoff } from "react-icons/md";
 import { FcBusinessman } from "react-icons/fc";
 import { FaHeadphonesAlt } from "react-icons/fa";
 import { FaUserLarge } from "react-icons/fa6";
+import Link from "next/link";
 const SidebarMenu = ({ toggleMenu, isMenuOpen }) => {
   const variants = {
     open: {
@@ -38,11 +39,11 @@ const SidebarMenu = ({ toggleMenu, isMenuOpen }) => {
   };
 
   const Menu = [
-    { color: "#D0AB17", icon: <IoHome size={24}/>, name: "Home" },
-    { color: "#D0AB17", icon: <BiSolidOffer size={24}/>, name: "Packages" },
-    { color: "#D0AB17", icon: <MdOutlineFlightTakeoff size={24}/>, name: "Services" },
-    { color: "#D0AB17", icon: <FaUserLarge size={24}/>, name: "Guidance" },
-    { color: "#D0AB17", icon: <FaHeadphonesAlt size={24}/>, name: "Contact Us" },
+    { color: "#D0AB17",path:"/",icon: <IoHome size={24}/>, name: "Home" },
+    { color: "#D0AB17",path:"/package", icon: <BiSolidOffer size={24}/>, name: "Packages" },
+    { color: "#D0AB17",path:"/service", icon: <MdOutlineFlightTakeoff size={24}/>, name: "Services" },
+    { color: "#D0AB17",path:"/Guidence", icon: <FaUserLarge size={24}/>, name: "Guidance" },
+    { color: "#D0AB17",path:"/contact", icon: <FaHeadphonesAlt size={24}/>, name: "Contact Us" },
   ];
 
   return (
@@ -100,11 +101,12 @@ const SidebarMenu = ({ toggleMenu, isMenuOpen }) => {
               >
                 {item.icon}
               </div>
+              <Link href={item.path} className="cb">
               <div
                 className="text-placeholder df fac fjc"
                 style={{
                   borderRadius: "5px",
-                  width: "100px",
+                  width: "200px",
                   height: "40px",
                   flex: "1",
                   border: `2px solid ${item.color}`,
@@ -112,6 +114,7 @@ const SidebarMenu = ({ toggleMenu, isMenuOpen }) => {
               >
                 {item.name}
               </div>
+              </Link>
             </motion.li>
           ))}
         </motion.ul>

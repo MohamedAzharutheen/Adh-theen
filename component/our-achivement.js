@@ -17,7 +17,7 @@ export default function OurAchivement() {
         {
             icon:"",
             anim:Transport,
-            title:"Confortable transportation",
+            title:"Comfortable transportation",
             width:"100px",
             height:"100px"
         },

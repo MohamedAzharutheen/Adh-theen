@@ -45,7 +45,7 @@ export default function PackageCard({closeCard}) {
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 1000;
+          z-index: 10000;
         }
         .icon-bg{
         background-color: #006C35;
@@ -93,12 +93,20 @@ export default function PackageCard({closeCard}) {
 
                 @media only screen and (max-width: 420px){
          .package-card {
-            width: auto;   
+            width: 290px;   
             border-radius: 12px;
             background-color: white;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+        }
+      .icon-pos{
+        background: #fff;
+        border-radius: 10px;
+        position: absolute;
+        padding: 3px;
+        top: -13px;
+        left: 94%;
         }
         }
         @media (max-width: 768px) {
