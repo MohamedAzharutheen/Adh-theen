@@ -16,14 +16,14 @@ export default function Navbar() {
         <div className='container-fluid'>
           <div className='df fac fjse fjc mdn'>
           <Link className='' href={"/"}><p className='fs-16 fwb'>Home</p></Link>
-          <Link href={"/"}><p className='fs-16 fwb'>Packages</p></Link>
+          <Link href={"/package"}><p className='fs-16 fwb'>Packages</p></Link>
             <Link href={"/gallery"}><p className='fs-16 fwb'>Gallery</p></Link>
 
             <div className=''>
               <Image className='logo-scale' src={"/assets/images/logos/logo.svg"} width={80} height={80} alt='Logo' loading='lazy' quality={100} />
             </div>
             <Link href={"/service"}><p className='fs-16 fwb'>Services</p></Link>
-            <Link href={"/"}><p className='fs-16 fwb'>Guidence</p></Link>
+            <Link href={"/guidenece"}><p className='fs-16 fwb'>Guidence</p></Link>
             <Link href={"/contact"}><p className='fs-16 fwb btn-cnt cw'>Contact Us</p></Link>
           </div>
 
