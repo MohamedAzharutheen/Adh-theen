@@ -62,7 +62,17 @@ export default function Address() {
     <EnquiryForm/>
     <section className="container-fluid">
     <div className='col-12  google-map mt70'>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.906062180957!2d77.70791197399276!3d8.700470594047102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041320431936e5%3A0x73e81c295eb83a69!2sLuzosa%20creations!5e0!3m2!1sen!2sin!4v1728722490947!5m2!1sen!2sin" width="100%" height="400" style={{borderRadius:"10px"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+    <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.906062180957!2d77.70791197399276!3d8.700470594047102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041320431936e5%3A0x73e81c295eb83a69!2sLuzosa%20creations!5e0!3m2!1sen!2sin!4v1728722490947!5m2!1sen!2sin" 
+  title="Map showing location of Ad-theen Hajj & Umrah Sevices" 
+  width="100%" 
+  height="400" 
+  style={{borderRadius:"10px"}} 
+  allowFullScreen 
+  loading="lazy" 
+  referrerPolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
     </section>
     <style jsx>
    {`

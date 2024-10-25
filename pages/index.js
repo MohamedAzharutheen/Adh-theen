@@ -5,6 +5,7 @@ import ValuableClient from '@/component/home/experinced-guidence'
 import HajjGateway from '@/component/home/hajj-gateway'
 import Journey from '@/component/home/journey'
 import Layout from '@/component/layout'
+import NextSeoModel from '@/component/nextseomodel'
 import OurAchivement from '@/component/our-achivement'
 import PackageCard from '@/component/packages/package-card'
 import ServiceCards from '@/component/services/service-cards'
@@ -48,8 +49,36 @@ useEffect(()=>{
   // Close the card when the cancel icon is clicked
   const closeCard = () => setIsVisible(false);
 
+// SEO Schema Method
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ath-Theen Hajj and Umrah Services",
+  "url": "https://www.yourwebsite.com",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-1234567890",
+    "contactType": "Customer Service",
+    "areaServed": "IN",
+    "availableLanguage": ["en", "ta"]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",            // Average rating value
+    "reviewCount": "1292"             // Total number of ratings
+  }
+}
   return (
     <>
+       <NextSeoModel
+        title="Best Hajj and Umrah Services | Affordable Packages"
+        description="Experience a seamless Hajj and Umrah journey with our trusted and affordable pilgrimage services. Discover tailored packages and personalized support for every step of your spiritual trip."
+        url="https://www.yourwebsite.com/"
+        keywords="best hajj service in tamilnadu,best umrah service in chennai,best umrah service in tamilnadu,best umrah service in tamilnadu,best umrah service in tamilnadu,cheapest month for umrah,cheapest umrah package from india, Umrah services, affordable pilgrimage packages, Islamic travel services, trusted pilgrimage organizers"
+        imageUrl="https://www.yourwebsite.com/images/hajj-umrah-banner.jpg"
+        schema={schema}
+      />
     <Layout>
       <Banner/>
       <WeFeelHappy/>

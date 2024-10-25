@@ -1,14 +1,7 @@
-import { Poppins, Quicksand } from 'next/font/google';
 import Image from 'next/image';
 import React, { Component } from 'react'
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import WordChanging from '../word-changing';
 import EnquiryForm from '../popup-form';
 import { MdOutlineArrowForward } from 'react-icons/md';
-const popins = Poppins({weight:"500",subsets:['latin']})
-const extrapopins = Poppins({weight:"600", subsets:['latin']});
-const quickSand = Quicksand({weight:"400",subsets:['latin']})
 class HeroSec extends Component {
   constructor(props){
     super(props);
@@ -40,18 +33,18 @@ handleFormPopup=()=>{
   
     const BoxContainerData = [
         {
-        icon:"/master-training/academy.svg",
-        title:"Learn",
+        icon:"🕋",
+        title:" Choose the Right Package",
         cnt:"Choose the right academy"
        },
        {
-        icon:"/master-training/improve.svg",
-        title:"Improve",
+        icon:"🔄",
+        title:"Familiarize Yourself with the Rituals",
         cnt:"Practice as much as possible"
        },
        {
-        icon:"/master-training/prepare.svg",
-        title:"Prepare",
+        icon:"🧳",
+        title:"Pack Wisely",
         cnt:"Acquire the interview Skills"
        },
     ]
@@ -60,19 +53,21 @@ handleFormPopup=()=>{
     <>
     <section className='bg-img mt70'>
         <div className='container'>
+            <h1 className='fs-33 tac fwb'>Welcome to <span className='logo-clr fwb'> Adh-Theen </span> Hajj and Umrah Services!</h1>
+            <p className='fs19 lnh33 ls025 mt-4'>At Ath-Theen, we are dedicated to providing a comprehensive and enriching experience for pilgrims embarking on their spiritual journey of Hajj and Umrah. <strong>Since our inception in 2008 </strong>, we have successfully assisted thousands of individuals and families in fulfilling their religious obligations with ease and comfort.</p>
             <div className='df fjsb fac fw mfdc tfdc '>
                  
                  {/* content Div */}
 
-                <div className='box-container pd20'>
+                <div className='box-container pd20 mmt40'>
               <div className='df  fdc gap20 mgap5 mbdf'>
                 {BoxContainerData.map((items,index)=>{
                     return(
                  <div className='df gap16 mpdt10' key={index}>
-                    <Image src={items.icon} width={24} height={23} alt='Learn-Icon' loading='lazy'/>
-                    <div className=''>
-                        <p className={`fs-28 mfs-14 ${extrapopins.className}`}>{items.title}</p>
-                        <p className={`fs-16 mfs-12 dim-clr pdt8 ${quickSand.className}`}>{items.cnt}</p>
+                      <p className='fs-19'>{items.icon}</p>
+                     <div className=''>
+                        <p className={`fs-16 mfs-14`}>{items.title}</p>
+                        <p className={`fs-16 mfs-12 dim-clr pdt8`}>{items.cnt}</p>
                     </div>
 
                  </div>
@@ -81,29 +76,28 @@ handleFormPopup=()=>{
               </div>
             </div>
             
-            <div className='mpdt40'>
+            <div className='mt40 '>
                 {/* <h4 className={`fs-45 mfs-24  ${extrapopins.className}`}>Become <span className='ylw-clr'> A proffesional <br/> </span>UI UX Designer</h4> */}
                 
-                   <h4 className={`fs-33`}>Becom a Website</h4>
                 <div className='total-box mt32 pos-r'>
-                    <div className='df fjsa mfw'>
+                    <div className='df fjse  mfw '>
                        <div className=''>
-                        <p className={`fs-28 mfs-19 tac ${extrapopins.className}`}>500+</p>
-                        <p className={`fs-24 mfs-16 pdt20 mpdt10 ${quickSand.className}`}>Hiring Partners</p>
+                        <p className={`fs-24 mfs-19 tac fwb`}>3900+</p>
+                        <p className={`fs-24 mfs-16 pdt20 mpdt10 `}>Satisfied Pilgrims</p>
                         </div> 
                         <div className='line'></div>
                         <div className=''>
-                        <p className={`fs-28 mfs-19 tac ${extrapopins.className}`}>100%</p>
-                        <p className={`fs-24 mfs-16 pdt20 mpdt10 ${quickSand.className}`}>Job Assistance</p>
+                        <p className={`fs-24 mfs-19 tac fwb`}>100%</p>
+                        <p className={`fs-24 mfs-16 pdt20 mpdt10 `}>Client Satisfaction</p>
                         </div> 
                         <div className='line'></div>
                         <div className=''>
-                        <p className={`fs-28 mfs-19 tac ${extrapopins.className}`}>3500+</p>
-                        <p className={`fs-24 mfs-16 pdt20 mpdt10 ${quickSand.className}`}>Student Placed</p>
+                        <p className={`fs-24 mfs-19 tac fwb`}>3500+</p>
+                        <p className={`fs-24 mfs-16 pdt20 mpdt10 `}>Journey Facilitated</p>
                         </div> 
                         
                     </div>
-                    <div className={`prem-box pos-a tac cw  mfs-16 ${quickSand.className}`}>Premium Course</div>
+                    <div className={`prem-box pos-a tac cw fs-24 mfs-16`}>Our Achievements</div>
 
                 </div>
 
@@ -111,22 +105,22 @@ handleFormPopup=()=>{
                     <div className='df fdc '>
                 <div className='df gap20 fac'>
                      <Image  src="/assets/images/tick.svg" width={32} height={32} alt='Tick Icon' loading='lazy'/>
-                     <p className={`fs-14 ${popins.className}`}>Industry Based Training</p> 
+                     <p className={`fs-14`}>Tailored Travel Solutions</p> 
                  </div> 
                  <div className='df gap20 fac mt32 mmt10'>
                      <Image  src="/assets/images/tick.svg" width={32} height={32} alt='Tick Icon' loading='lazy'/>
-                     <p className={`fs-14 ${popins.className}`}>Regular Assessments & Feedback</p> 
+                     <p className={`fs-14 `}>Expert Guidance</p> 
                  </div>   
                  </div>
 
                  <div className='df fdc mmt10'>
                 <div className='df gap20 fac'>
                      <Image  src="/assets/images/tick.svg" width={32} height={32} alt='Tick Icon' loading='lazy'/>
-                     <p className={`fs-14 ${popins.className}`}>Extra Doubt Clearance Sessions</p> 
+                     <p className={`fs-14 `}>Reliable Partnerships</p> 
                  </div> 
                  <div className='df gap20 fac mt32 mmt10'>
                      <Image  src="/assets/images/tick.svg" width={32} height={32} alt='Tick Icon' loading='lazy'/>
-                     <p className={`fs-14 ${popins.className}`}>Resume & Portfolio Guidance</p> 
+                     <p className={`fs-14`}>Best Travels In Tirunelveli</p> 
                  </div>   
                  </div>
 
@@ -137,7 +131,7 @@ handleFormPopup=()=>{
                  <div className='mt32 df gap20 fjfe'>
 
                     <div className='enrl-btn'>
-                    <p onClick={this.handleFormPopup} className={` cursor cw fs-18 mfs-16 fwb ${quickSand.className}`}>Get It Now
+                    <p onClick={this.handleFormPopup} className={` cursor cw fs-18 mfs-16 fwb`}>Get It Now
                        &nbsp;
                        <span className=''>
                       <MdOutlineArrowForward size={34} />
@@ -165,12 +159,10 @@ handleFormPopup=()=>{
         .prem-box{
         padding: 10px;
         border-radius: 8px;
-        background-color: #04AF00;
-        width: 225px;
+        background-color: #006c35;
+        width: auto;
         top: -20%;
         left: 55%;
-        font-size: 24px;
-        line-height: 27px;
         }
         .bg-img{
             background-image: url('/master-training/prev-page/hero-section/bg-img.webp');
@@ -244,14 +236,23 @@ handleFormPopup=()=>{
         .prem-box{
         padding: 5px;
         border-radius: 8px;
-        background-color: #04AF00;
+        background-color: #006c35;
         width: 180px;
         top: -20%;
         left: 15%;
-        font-size: 19px;
-        line-height: 27px;
         }
         }
+             @media only screen and (max-width: 523px){
+                 .prem-box{
+        padding: 5px;
+        border-radius: 8px;
+        background-color: #006c35;
+        width: 180px;
+        top: -10%;
+        left: 20%;
+
+        }
+             }
           @media only screen and (max-width: 400px){
          .total-box{
            background-color: #FFFFFF;
@@ -277,12 +278,11 @@ handleFormPopup=()=>{
         .prem-box{
         padding: 5px;
         border-radius: 8px;
-        background-color: #04AF00;
+        background-color: #006c35;
         width: 180px;
         top: -10%;
         left: 20%;
-        font-size: 19px;
-        line-height: 27px;
+
         }
         }
            @media only screen and (max-width: 1255px){

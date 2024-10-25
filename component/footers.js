@@ -59,7 +59,10 @@ export default function Footers() {
             <p className='fs-16 lnh27 dim-whit fw4 pdt16 mpdt5 '>Connect with us for all your Hajj and Umrah needs. Ath-Theen is dedicated to guiding you every step of the way!</p>
             </div>
             <div className='col-12 col-lg-3 google-map'>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.906062180957!2d77.70791197399276!3d8.700470594047102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041320431936e5%3A0x73e81c295eb83a69!2sLuzosa%20creations!5e0!3m2!1sen!2sin!4v1728649676215!5m2!1sen!2sin"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.906062180957!2d77.70791197399276!3d8.700470594047102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041320431936e5%3A0x73e81c295eb83a69!2sLuzosa%20creations!5e0!3m2!1sen!2sin!4v1728649676215!5m2!1sen!2sin"  
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
          </div>

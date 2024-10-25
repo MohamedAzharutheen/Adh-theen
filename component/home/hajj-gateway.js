@@ -22,7 +22,7 @@ export default function HajjGateway() {
  <style jsx>
  {`
  .gateway-bg{
-        background-image: url('/assets/images/dua-image.jpg');
+        background-image: url('/assets/images/dua-image.webp');
         width:100%;
         height: 500px;
         background-size: cover;

@@ -1,15 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FaChevronDown } from "react-icons/fa";
 import SidebarMenu from './mobile-nav';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  const handleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+ 
   return (
     <>
       <section className='header'>
@@ -23,8 +28,32 @@ export default function Navbar() {
               <Image className='logo-scale' src={"/assets/images/logos/logo.svg"} width={80} height={80} alt='Logo' loading='lazy' quality={100} />
             </div>
             <Link href={"/service"}><p className='fs-16 fwb'>Services</p></Link>
-            <Link href={"/guidence"}><p className='fs-16 fwb'>Guidance</p></Link>
-            <Link href={"/contact"}><p className='fs-16 fwb btn-cnt cw'>Contact Us</p></Link>
+            <div className='pos-r'>
+                <div className='df fac gap5'>
+                  <p onClick={handleDropdown} className={`fs-16 fwb cursor`}>Guidance</p>
+                  <motion.div
+                    animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}>
+                    <FaChevronDown size={16} color='#000' />
+                  </motion.div>
+                </div>
+                {isDropdownOpen && (
+                  <motion.div className='drop-down cursor'
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                 <Link href={"/guidance/hajj-guide"} >
+                   <h6 className={`fs-16 fwb pdtbl10 green-clr`}>Hajj Guide</h6>
+                   </Link>
+                   <Link href={"/guidance/umrah-guide"} >
+                    <h6 className={`fs-16 fwb pdtbl10 green-clr`}>Umrah Guide</h6>
+                    </Link>
+                    </motion.div>
+                )}
+              </div>
+            <Link href={"/contact"}><button className='fs-16 fwb btn-cnt cw'>Contact Us</button></Link>
           </div>
 
           <div className='mdf fjsb fac dn mdb'>
@@ -41,25 +70,6 @@ export default function Navbar() {
 
           </div>
         </div>
-
-        {/* Off-canvas sidebar */}
-        {/* <motion.div
-          className='side-bar'
-          initial={{ x: '-100%' }}
-          animate={{ x: isMenuOpen ? 0 : '-100%' }}
-          transition={{ type: 'tween', duration: 0.3 }}
-        >
-         {isMenuOpen &&( <div className={` df fdc gap8 dn mdb`}>
-            <Link href={"/"}><p className='fs-19 '>Home</p></Link>
-            <Link href={"/"}><p className='fs-19 '>Packages</p></Link>
-            <Link href={"/gallery"}><p className='fs-19 '>Gallery</p></Link>
-
-            <Link href={"/"}><p className='fs-19 '>About Us</p></Link>
-            <Link href={"/service"}><p className='fs-19 '>Services</p></Link>
-            <Link href={"/"}><p className='fs-19 '>Packages</p></Link>
-          </div>
-          )}
-        </motion.div> */}
       </section>
 
 
@@ -72,6 +82,9 @@ export default function Navbar() {
           background: linear-gradient(90deg, #e9c751 0%, #ffffff 100%);
           border-bottom: 1px solid #ffffff;
           width: 100%;
+          // position: sticky;
+          // top: 40px;
+          // z-index: 200000;
         }
              p {
               position: relative;

@@ -91,9 +91,11 @@ console.log("Data",formData)
                 onChange={handleChange}
                 required >
                 <option  value="" disabled>Select Service</option>
-                <option value="Service1">Service 1</option>
-                <option value="Service2">Service 2</option>
-                <option value="Service3">Service 3</option>
+                <option value="Hajj">Hajj </option>
+                <option value="Umrah">Umrah</option>
+                <option value="Air Ticket">Air Ticket </option>
+                <option value="Train Ticket">Train Ticket </option>
+                <option value="Bus Ticket">Bus Ticket </option>
               </select>
               <label className={`label ${formData.service ? 'label--filled' : 'dn'}`}>
                 Services
@@ -110,7 +112,7 @@ console.log("Data",formData)
             ></textarea>
           </div>
           <div className=''>
-            <button  className='submit-btn fs-19 pd10'>Submit</button>
+            <button  className='submit-btn fs-19 pd10 cw'>Submit</button>
           </div>
         </form>
         </div>
@@ -120,7 +122,7 @@ console.log("Data",formData)
         {`
          .submit-btn{
          width: 100%;
-         background: lightgreen;
+         background: #006c35;
          border-radius: 10px;
          border: none;
 
