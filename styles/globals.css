@@ -3223,3 +3223,33 @@ height: 200px !important;
 		font-size: 4rem !important;
 		padding: 5px !important;
 	}
+.jLfSfu{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: calc(0%) !important;
+	background: #EACA5A !important;
+	transform: translateY(-50%) rotate(225deg);
+	z-index: -1;
+	right: -13px;
+}
+
+.imUegb{
+    border-radius: 50% !important;
+    cursor: pointer;
+    height: 100px !important;
+    width: 100px !important;
+}
+.gDgdlA{
+font-size: 12px !important;
+font-weight: 400 !important;
+line-height: 30px !important;
+margin: 0;
+}
+.iTjepU{
+border: 1px solid #EACA5A !important;
+border-radius: 8px !important
+}
