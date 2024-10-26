@@ -3307,13 +3307,24 @@ display: none !important;
 .dqFIGA{
 	color: #EACA5A !important;
 }
-.kiMRco {
-    color: #006c35 !important;
-    font-size: 1rem !important;
-    font-weight: 600;
-    margin: 0.25rem 0px 0.5rem;
-    text-align: left;
+
+.kaWcHB::after{
+background: #006c35 !important;
+}
+.kaWcHB::before{
+	background: #006c35 !important;	
+}
+.iHVKSW {
+    flex: 4 1 0%;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100% !important;
     width: 100% !important;
+    object-fit: cover;
+    object-position: center center;
+    visibility: visible;
+    border-radius: 0px;
 }
 @media only screen and (max-width: 768px){
 .imUegb{
@@ -3321,5 +3332,13 @@ display: none !important;
     cursor: pointer;
     height: 50px !important;
     width: 50px !important;
+}
+.kiMRco {
+    color: #006c35 !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    margin: 0.25rem 0px 0.5rem;
+    text-align: left;
+    width: 100% !important;
 }
 }
