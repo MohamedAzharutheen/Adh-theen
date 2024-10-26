@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Layout from "@/component/layout";
+import "react-chrono/dist/styles.css";
 
 const Chrono = dynamic(() => import("react-chrono").then((mod) => mod.Chrono), {
   ssr: false,
