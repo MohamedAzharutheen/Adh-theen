@@ -32,19 +32,19 @@ export default function EnquiryBtn() {
           {/* Additional icons (WhatsApp, Call, Message) */}
          <div className={`extra-enquiry-icons ${isOpen ? 'open' :''}`}>
             <div className="sub-icon" style={{ transitionDelay: '0.1s' }}>
-              <Link legacyBehavior href={`mailto:contact@learnsoft.org`} target="_blank" rel="noopener noreferrer">
+              <Link legacyBehavior href={`mailto:aldeentoursandtravels@gmail.com`} target="_blank" rel="noopener noreferrer">
                 <a target="blank">
                   <MdOutlineMail size={24} color="#FFFFFF" />
                 </a>
               </Link>
             </div>
             <div className="sub-icon" style={{ transitionDelay: '0.2s' }}>
-              <Link href={`tel:+917825888899`}>
+              <Link href={`tel:+91 88 38 50 41 18`}>
                 <LuPhone size={24} color="#FFFFFF" />
               </Link>
             </div>
             <div className="sub-icon" style={{ transitionDelay: '0.3s' }}>
-              <Link legacyBehavior href={`https://wa.me/917825888899`} passHref rel="noopener noreferrer">
+              <Link legacyBehavior href={`https://wa.me/8838504118`} passHref rel="noopener noreferrer">
                 <a target="blank">
                   <BsWhatsapp size={24} color="#FFFFFF" />
                 </a>

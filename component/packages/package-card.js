@@ -26,7 +26,7 @@ export default function PackageCard({closeCard}) {
                <div className='df gap8 pd10 fac'>
              <FiPhoneCall />
                 <p className='fs-14 fwb'>
-                    +91 81242 89972
+                    +91 950077 1134
                 </p>
                 </div>
              </div>

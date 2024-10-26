@@ -392,6 +392,9 @@ background: rgba(255, 255, 255, 0.3); /* Example: Light mirror effect with trans
           position: relative; /* To position button absolutely */
           margin: 0 10px; /* Add horizontal margin for spacing between cards */
         }
+        .para-height{
+        height: auto;
+        }
 
         }
 

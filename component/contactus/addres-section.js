@@ -33,7 +33,6 @@ export default function Address() {
                     <p className={`fs-24 fw-bold `}>ContactUs</p>
 
                     <p className={`fs16 lnh33 pdt10`}> 950077 1134</p>  
-                    <p className={`fs16 lnh33 `}> 80152 47374</p>
                     <p className={`fs16 lnh33 `}> 8838 504118</p>
                     <p className={`fs16 lnh33 `}> aldeentoursandtravels@gmail.com</p>
                 </div>

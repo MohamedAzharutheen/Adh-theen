@@ -40,7 +40,7 @@ export default function TopHeader() {
               <p className="fs-14 fwb">ContactUs :</p>
               <div className='df fac gap11'>
               <FaPhoneVolume size={20} color='#4CAF50'/>
-              <Link href="tel:+91 81242 89972"><p className="fs-12 fw6">+91 81242 89972</p></Link>
+              <Link href="tel:+91 81242 89972"><p className="fs-12 fw6">+91 950077 1134</p></Link>
               </div>
           </div>
         {/* <Link href={"/"}><p className='fs-14 fwb '>Contact Us :  <span className='fs-12 fw6 pdl5'> <FaPhoneVolume size={20} color='#4CAF50'/> +91 8124289972</span> </p></Link> */}
