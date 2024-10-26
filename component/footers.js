@@ -72,7 +72,7 @@ export default function Footers() {
     <div className='footer-bottom'>
       <div className="df fjsb fw mfac mfjc social-icon">
           <ul className='df gap20 mgap10 fw pdl0 mb0'>
-          <Link href={"/about"}>   <li className={`fs-14 dim-whit fw5`}>  About Us</li></Link> 
+          <Link href={"/aboutus"}>   <li className={`fs-14 dim-whit fw5`}>  About Us</li></Link> 
           <Link href={"/contact"}>  <li className={`fs-14 dim-whit fw5`}> Contact Us </li> </Link>
           <Link href={"/"}> <li className={`fs-14 dim-whit fw5`}>FAQS</li> </Link> 
           <Link href={"/service"}>  <li className={`fs-14 dim-whit fw5`}>Services </li> </Link>
