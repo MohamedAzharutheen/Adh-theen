@@ -3243,13 +3243,36 @@ height: 200px !important;
     height: 100px !important;
     width: 100px !important;
 }
+.imUegb:not(.using-icon) {
+	background: #006c35 !important;
+}
 .gDgdlA{
-font-size: 12px !important;
+font-size: 14px !important;
 font-weight: 400 !important;
 line-height: 30px !important;
 margin: 0;
 }
 .iTjepU{
 border: 1px solid #EACA5A !important;
-border-radius: 8px !important
+border-radius: 8px !important;
+max-width: 100% !important;
+}
+.kiMRco {
+    color: #006c35;
+    font-size: 2rem !important;
+    font-weight: 600;
+    margin: 0.25rem 0px 0.5rem;
+    text-align: left;
+    width: 95%;
+}
+.gjuTGZ{
+display: none !important;
+}
+@media only screen and (max-width: 768px){
+.imUegb{
+    border-radius: 50% !important;
+    cursor: pointer;
+    height: 50px !important;
+    width: 50px !important;
+}
 }
