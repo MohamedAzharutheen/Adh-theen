@@ -3245,6 +3245,7 @@ height: 200px !important;
 }
 .imUegb:not(.using-icon) {
 	background: #006c35 !important;
+	border: 3px solid #006c35 !important;
 }
 .gDgdlA{
 font-size: 14px !important;
@@ -3258,7 +3259,7 @@ border-radius: 8px !important;
 max-width: 100% !important;
 }
 .kiMRco {
-    color: #006c35;
+    color: #006c35 !important;
     font-size: 2rem !important;
     font-weight: 600;
     margin: 0.25rem 0px 0.5rem;
@@ -3267,6 +3268,35 @@ max-width: 100% !important;
 }
 .gjuTGZ{
 display: none !important;
+}
+.gjuTGZ{
+	background: #006c35 !important;
+}
+.ccTkJh {
+    /* flex: 4; */
+    justify-self: center;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    height: auto !important;
+    width: 450px !important;
+    object-fit: cover !important;
+    object-position: center;
+    visibility: visib1le;
+    border-radius: 0 ;
+}
+.keecDZ {
+    align-items: flex-start;
+    align-self: center;
+    background: #f5f5f5;
+    border-radius: 4px;
+    flex-direction: row;
+     height: 0 !important;
+     padding: 0 !important; 
+    position: relative;
+    text-align: center;
+    width: 100% !important; 
+    min-height: 200px !important;
+    justify-content: flex-end;
 }
 @media only screen and (max-width: 768px){
 .imUegb{

@@ -15,7 +15,7 @@ const ZigzagTimeline = () => {
       media: {
         name: "Step 1 Image",
         source: {
-          url: "/assets/images/guide/ihram-.svg",
+          url: "/assets/images/guide/ihram.jpg",
         },
         type: "IMAGE",
       },
@@ -27,7 +27,7 @@ const ZigzagTimeline = () => {
       media: {
         name: "Step 2 Image",
         source: {
-          url: "/assets/images/guide/ihram-.svg",
+          url: "/assets/images/guide/tawaf.png",
         },
         type: "IMAGE",
       },
