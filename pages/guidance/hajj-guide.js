@@ -1,5 +1,5 @@
 import React from "react";
-// 
+import { Chrono } from "react-chrono";
 import Layout from "@/component/layout";
 
 // const Chrono = dynamic(() => import("react-chrono").then((mod) => mod.Chrono), {
