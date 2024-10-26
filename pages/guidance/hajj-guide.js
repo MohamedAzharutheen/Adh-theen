@@ -1,10 +1,10 @@
 import React from "react";
-import dynamic from "next/dynamic";
+// 
 import Layout from "@/component/layout";
 
-const Chrono = dynamic(() => import("react-chrono").then((mod) => mod.Chrono), {
-  ssr: false,
-});
+// const Chrono = dynamic(() => import("react-chrono").then((mod) => mod.Chrono), {
+//   ssr: false,
+// });
 
 const ZigzagTimeline = () => {
   const items = [
