@@ -63,7 +63,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/arafh.png",
+            url: "/assets/images/guide/arafah.png",
           },
           type: "IMAGE",
         },
@@ -87,7 +87,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/tawaf.png",
+            url: "/assets/images/guide/jamarat.png",
           },
           type: "IMAGE",
         },
@@ -111,7 +111,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/tawaf.png",
+            url: "/assets/images/guide/hair.png",
           },
           type: "IMAGE",
         },
