@@ -39,7 +39,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/safa-marwah.png",
           },
           type: "IMAGE",
         },
@@ -51,7 +51,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/minaa.png",
           },
           type: "IMAGE",
         },
@@ -63,7 +63,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/arafh.png",
           },
           type: "IMAGE",
         },
@@ -75,7 +75,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/mustalifah.png",
           },
           type: "IMAGE",
         },
@@ -87,7 +87,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/tawaf.png",
           },
           type: "IMAGE",
         },
@@ -99,7 +99,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/tawaf.png",
           },
           type: "IMAGE",
         },
@@ -111,7 +111,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/tawaf.png",
           },
           type: "IMAGE",
         },
@@ -123,7 +123,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/tawaf.png",
           },
           type: "IMAGE",
         },
@@ -135,7 +135,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/tawaf.png",
           },
           type: "IMAGE",
         },
@@ -147,7 +147,7 @@ const ZigzagTimeline = () => {
         media: {
           name: "Step 2 Image",
           source: {
-            url: "/assets/images/guide/ihram-.svg",
+            url: "/assets/images/guide/tawaf.png",
           },
           type: "IMAGE",
         },
