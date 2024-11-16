@@ -9,7 +9,7 @@ import { FaHeadphonesAlt } from "react-icons/fa";
 import { FaUserLarge } from "react-icons/fa6";
 import Link from "next/link";
 
-const SidebarMenu = ({ toggleMenu, isMenuOpen }) => {
+const SidebarMenu = ({ toggleMenu, isMenuOpen,Menu }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleDropdownToggle = () => {
@@ -40,13 +40,13 @@ const SidebarMenu = ({ toggleMenu, isMenuOpen }) => {
     },
   };
 
-  const Menu = [
-    { color: "#D0AB17", path: "/", icon: <IoHome size={24} />, name: "Home" },
-    { color: "#D0AB17", path: "/package", icon: <BiSolidOffer size={24} />, name: "Packages" },
-    { color: "#D0AB17", path: "/service", icon: <MdOutlineFlightTakeoff size={24} />, name: "Services" },
-    { color: "#D0AB17", path: "/", icon: <FaUserLarge size={24} />, name: "Guidance" },
-    { color: "#D0AB17", path: "/contact", icon: <FaHeadphonesAlt size={24} />, name: "Contact Us" },
-  ];
+  // const Menu = [
+  //   { color: "#D0AB17", path: "/", icon: <IoHome size={24} />, name: "Home" },
+  //   { color: "#D0AB17", path: "/package", icon: <BiSolidOffer size={24} />, name: "Packages" },
+  //   { color: "#D0AB17", path: "/service", icon: <MdOutlineFlightTakeoff size={24} />, name: "Services" },
+  //   { color: "#D0AB17", path: "/", icon: <FaUserLarge size={24} />, name: "Guidance" },
+  //   { color: "#D0AB17", path: "/contact", icon: <FaHeadphonesAlt size={24} />, name: "Contact Us" },
+  // ];
 
   return (
     <div

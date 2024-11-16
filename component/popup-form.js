@@ -5,15 +5,15 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const   EnquiryForm = ({close}) => {
+  const [loading,setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    mobileNumber: '',
+    phone: '',
     email: '',
-    packages: '',
+    service: '',
     message: '',
   });
   const [errors, setErrors] = useState({});
-  const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [closeForm, setCloseForm] = useState(true);
 
   const handleInputChange = (field, value) => {
@@ -23,51 +23,52 @@ const   EnquiryForm = ({close}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const { name, mobileNumber, packages } = formData;
+  
+    const { name, phone, service } = formData;
 
     // Validate the form fields
     const validationErrors = {};
     if (!name.trim()) {
       validationErrors.name = 'Name is required';
     }
-    if (!mobileNumber.trim()) {
-      validationErrors.mobileNumber = 'Mobile Number is required';
+    if (!phone.trim()) {
+      validationErrors.phone = 'Mobile Number is required';
     }
-    if (!packages.trim()) {
-      validationErrors.course = 'Please Select Your Package';
+    if (!service.trim()) {
+      validationErrors.service = 'Please Select Your Package';
     }
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      setSubmissionSuccess(false);
       return;
     }
- 
-    setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        service: '',
-        message:''
-    })
-    console.log("Data",formData)
-    
+    setLoading(true)
+ try {
+  const response = await axios.post(`${process.env.url}/api/user/enquiry`,formData)
+          // Reset form data after submission
+ setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            packages: '',
+            message: '',
+    });
+  setErrors({});
+  console.log("Data Added Successfully",response.data);
+  
+  toast.success('Your form has been submitted successfully!');
 
-      // Reset form data after submission
-      setFormData({
-        name: '',
-        mobileNumber: '',
-        email: '',
-        packages: '',
-        message: '',
-      });
-      setErrors({});
-      toast.success('Your form has been submitted successfully!');
+  setTimeout(() => {
+    setCloseForm(false);
+  }, 6000);
 
-      setTimeout(() => {
-        setCloseForm(false);
-      }, 6000);
-
+ } catch (error) {
+  console.error('Error Response:', error.response ? error.response.data : error.message);
+  alert('Form Submission Is Failed,Please Call This Number 950077 1134 .');
+ }
+finally{
+  setLoading(false)
+}
   };
 
   if (!closeForm) {
@@ -94,24 +95,14 @@ const   EnquiryForm = ({close}) => {
                 onChange={(e) => handleInputChange('name', e.target.value)}
               />
               {errors.name && <span className="red-clr fs-12 ">{errors.name}</span>}
-
-              <input
-                className={`inp-box mt12`}
-                type='text'
-                placeholder='Course'
-                value={formData.course}
-                onChange={(e) => handleInputChange('message', e.target.value)}
-              />
-              {errors.course && <span className="red-clr fs-12 mfs-10 pdt10 mpdt5">{errors.course}</span>}
-
               <input
                 className={`inp-box mt12`}
                 type='tel'
                 placeholder='Mobile No'
-                value={formData.mobileNumber}
-                onChange={(e) => handleInputChange('mobileNumber', e.target.value)}
+                value={formData.phone}
+                onChange={(e) => handleInputChange('phone', e.target.value)}
               />
-              {errors.mobileNumber && <span className="red-clr fs-12 mfs-10 pdt10 mpdt5">{errors.mobileNumber}</span>}
+              {errors.phone && <span className="red-clr fs-12 mfs-10 pdt10 mpdt5">{errors.phone}</span>}
 
               <input
                 className={`inp-box mt12`}
@@ -123,23 +114,61 @@ const   EnquiryForm = ({close}) => {
 
               <select
                 className={`opt-box mt12`}
-                value={formData.packages}
-                onChange={(e) => handleInputChange('packages', e.target.value)}
+                value={formData.service}
+                onChange={(e) => handleInputChange('service', e.target.value)}
               >
-                <option className={`opt-value`} >Packages Type</option>
-                <option value="online" className={`opt-value`}>Semi Delux</option>
-                <option value="offline" className={`opt-value`}>Economy</option>
+                <option className={`opt-value`} value={`opt-value`} >Packages Type</option>
+                <option value="Semi Delux" className={`opt-value`}>Semi Delux</option>
+                <option value="Economy" className={`opt-value`}>Economy</option>
               </select>
-
+              {errors.service && <span className="red-clr fs-12 ">{errors.service}</span>}
+              <input
+                className={`inp-box mt12`}
+                type='text'
+                placeholder='Message'
+                value={formData.message}
+                onChange={(e) => handleInputChange('message', e.target.value)}
+              />
               <div className={`mt20`}>
-                <button className={`sub-btn fs-16 cw`} onClick={handleSubmit}> Submit </button>
+                <button className={`sub-btn fs-16 cw`} onClick={handleSubmit}> 
+                {loading ? (<div className="spinner-container">
+            <div className="spinner"></div>
+          </div>):'Submit'}  
+                 </button>
               </div>
-              {submissionSuccess && <div className="success-message fs-19 tac ">Registration successful!</div>}
             </div>
           </div>
         </div>
 
         <style jsx>{`
+
+
+/* Spinner container */
+.spinner-container {
+  display: flex; /* Center spinner */
+  align-items: center; /* Vertically center spinner */
+  justify-content: center;
+}
+
+/* Spinner styles */
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0);
+  border-left-color: #ffffff; /* Spinner color */
+  border-radius: 50%;
+  width: 20px; /* Spinner size */
+  height: 20px; /* Spinner size */
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
           .success-message {
             color: #FFA900;
           }

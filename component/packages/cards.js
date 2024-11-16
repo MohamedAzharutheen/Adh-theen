@@ -5,7 +5,11 @@ import React from 'react'
 import { PiUsersThreeBold } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa6";
 import Adsposter from './ads-poster';
-export default function Cards() {
+import moment from 'moment';
+
+export default function Cards({packageData}) {
+
+  
   return (
    <>
    <section className="mt70 container mb40">
@@ -14,30 +18,34 @@ export default function Cards() {
    
    <div className="row mt-5">
    <div className="col-12 col-md-12 col-lg-8">
+
     <div className='row'>
-    <div className="col-12 col-md-6 col-lg-6">
+    {packageData &&  packageData.length > 0 ?(
+  packageData.map((items,index)=>(
+    <div className="col-12 col-md-6 col-lg-6 mt-3"  key={index}>
+
         <div className='package-card cursor'>
            <div className='pos-r'>
             
            <div className="overlay"></div>
 
-            <Image className=" pos-r" style={{width:"100%" }} src="/assets/images/services-img/hajj-service.jpg" width={390} height={242} alt={`-Image`} loading="lazy" quality={100}/>
+            <Image className=" pos-r" style={{width:"100%" }} src={items.Image} width={390} height={242} alt={`-Image`} loading="lazy" quality={100}/>
 
-             <p className="image-title fs-16 fw7 ">Private</p>
-             <div className="days">
-               <h6 className="">14 Days / Night /Makkah /Madhina</h6>
-             </div>
+             <p className="image-title fs-16  ">{moment(items.Depature).format('Do MMM')}</p>
+             {/* <div className="days">
+               <h6 className=""></h6>
+             </div> */}
            </div>
 
            <div className="pd10">
-            <h6 className="fs-22 lnh41 fw5 mfs-19">Umrah Group Package At Cheapest Prices</h6>
+            <h6 className="fs-22 lnh33  fw5 mfs-19 pkg-name">{items.PackageName}</h6>
             <div className="df gap8 mt24">
                 <p className ="fs-16 fw5">Makkah : </p>
-                <span className="fs-16 fw5 green-clr">Fajr Al Badea 5</span>
+                <span className="fs-16 fwb green-clr">{items.MekkahHotelName}</span>
             </div>
             <div className="df gap8 mt10">
                 <p className ="fs-16 fw5">Madhina : </p>
-                <span className="fs-16 fw5 green-clr">Karam Al Madhina</span>
+                <span className="fs-16 fwb green-clr">{items.MadhinaHotelName}</span>
             </div>
             <div className="place-area mt32">
                <ul className="place-list text-animation">
@@ -61,7 +69,7 @@ export default function Cards() {
             <div className="Price-details mt32 df fac ">
                  <div className="">
                 <p className="fs-12 fw4 text-capitalize dim-clr">Starting From</p>
-                <h4 className="fs-22 fw7  mfs-19 green-clr pdt8">₹ 83,000 </h4>
+                <h4 className="fs-22 fw7  mfs-19 green-clr pdt8">₹{items.Price} </h4>
                 </div>
                 <p className="fs-12 fw4 text-capitalize dim-clr pdt20">Per Person</p>
                 <div className="pdl16 mt16">
@@ -71,236 +79,12 @@ export default function Cards() {
            </div>
          
         </div>
+       
     </div>
-    <div className="col-12 col-md-6 col-lg-6">
-        <div className='package-card cursor'>
-           <div className='pos-r'>
-            
-           <div className="overlay"></div>
-
-            <Image className=" pos-r" style={{width:"100%" }} src="/assets/images/services-img/hajj-service.jpg" width={390} height={242} alt={`-Image`} loading="lazy" quality={100}/>
-
-             <p className="image-title fs-16 fw7 ">Private</p>
-             <div className="days">
-               <h6 className="">Days</h6>
-             </div>
-           </div>
-
-           <div className="pd10">
-            <h6 className="fs-22 lnh41 fw5 mfs-19">Umrah Group Package At Cheapest Prices</h6>
-            <div className="df gap8 mt24">
-                <p className ="fs-16 fw5">Makkah : </p>
-                <span className="fs-16 fw5 green-clr">Fajr Al Badea 5</span>
-            </div>
-            <div className="df gap8 mt10">
-                <p className ="fs-16 fw5">Madhina : </p>
-                <span className="fs-16 fw5 green-clr">Karam Al Madhina</span>
-            </div>
-            <div className="place-area mt32">
-               <ul className="place-list text-animation">
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                </ul>  
-            </div>
-            <div className="Price-details mt32 df fac ">
-                 <div className="">
-                <p className="fs-12 fw4 text-capitalize dim-clr">Starting From</p>
-                <h4 className="fs-22 fw7  mfs-19 green-clr pdt8">₹ 83,000 </h4>
-                </div>
-                <p className="fs-12 fw4 text-capitalize dim-clr pdt20">Per Person</p>
-                <div className="pdl16 mt16">
-                    <button className="fs-14 fw5 cw book-now-btn ">Book Now</button>
-                </div>
-            </div>
-           </div>
-         
-        </div>
-    </div> 
-    <div className="col-12 col-md-6 col-lg-6">
-        <div className='package-card cursor'>
-           <div className='pos-r'>
-            
-           <div className="overlay"></div>
-
-            <Image className=" pos-r" style={{width:"100%" }} src="/assets/images/services-img/hajj-service.jpg" width={390} height={242} alt={`-Image`} loading="lazy" quality={100}/>
-
-             <p className="image-title fs-16 fw7 ">Private</p>
-             <div className="days">
-               <h6 className="">Days</h6>
-             </div>
-           </div>
-
-           <div className="pd10">
-            <h6 className="fs-22 lnh41 fw5 mfs-19">Umrah Group Package At Cheapest Prices</h6>
-            <div className="df gap8 mt24">
-                <p className ="fs-16 fw5">Makkah : </p>
-                <span className="fs-16 fw5 green-clr">Fajr Al Badea 5</span>
-            </div>
-            <div className="df gap8 mt10">
-                <p className ="fs-16 fw5">Madhina : </p>
-                <span className="fs-16 fw5 green-clr">Karam Al Madhina</span>
-            </div>
-            <div className="place-area mt32">
-               <ul className="place-list text-animation">
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                </ul>  
-            </div>
-            <div className="Price-details mt32 df fac ">
-                 <div className="">
-                <p className="fs-12 fw4 text-capitalize dim-clr">Starting From</p>
-                <h4 className="fs-22 fw7  mfs-19 green-clr pdt8">₹ 83,000 </h4>
-                </div>
-                <p className="fs-12 fw4 text-capitalize dim-clr pdt20">Per Person</p>
-                <div className="pdl16 mt16">
-                    <button className="fs-14 fw5 cw book-now-btn ">Book Now</button>
-                </div>
-            </div>
-           </div>
-         
-        </div>
-    </div> 
-    <div className="col-12 col-md-6 col-lg-6">
-        <div className='package-card cursor'>
-           <div className='pos-r'>
-            
-           <div className="overlay"></div>
-
-            <Image className=" pos-r" style={{width:"100%" }} src="/assets/images/services-img/hajj-service.jpg" width={390} height={242} alt={`-Image`} loading="lazy" quality={100}/>
-
-             <p className="image-title fs-16 fw7 ">Private</p>
-             <div className="days">
-               <h6 className="">Days</h6>
-             </div>
-           </div>
-
-           <div className="pd10">
-            <h6 className="fs-22 lnh41 fw5 mfs-19">Umrah Group Package At Cheapest Prices</h6>
-            <div className="df gap8 mt24">
-                <p className ="fs-16 fw5">Makkah : </p>
-                <span className="fs-16 fw5 green-clr">Fajr Al Badea 5</span>
-            </div>
-            <div className="df gap8 mt10">
-                <p className ="fs-16 fw5">Madhina : </p>
-                <span className="fs-16 fw5 green-clr">Karam Al Madhina</span>
-            </div>
-            <div className="place-area mt32">
-               <ul className="place-list text-animation">
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                </ul>  
-            </div>
-            <div className="Price-details mt32 df fac ">
-                 <div className="">
-                <p className="fs-12 fw4 text-capitalize dim-clr">Starting From</p>
-                <h4 className="fs-22 fw7  mfs-19 green-clr pdt8">₹ 83,000 </h4>
-                </div>
-                <p className="fs-12 fw4 text-capitalize dim-clr pdt20">Per Person</p>
-                <div className="pdl16 mt16">
-                    <button className="fs-14 fw5 cw book-now-btn ">Book Now</button>
-                </div>
-            </div>
-           </div>
-         
-        </div>
-    </div> 
-
-    <div className="col-12 col-md-6 col-lg-6">
-        <div className='package-card cursor '>
-           <div className='pos-r'>
-            
-           <div className="overlay"></div>
-
-            <Image className=" pos-r" style={{width:"100%" }} src="/assets/images/services-img/hajj-service.jpg" width={390} height={242} alt={`-Image`} loading="lazy" quality={100}/>
-
-             <p className="image-title fs-16 fw7 ">Private</p>
-             <div className="days">
-               <h6 className="">Days</h6>
-             </div>
-           </div>
-
-           <div className="pd10">
-            <h6 className="fs-22 lnh41 fw5 mfs-19">Umrah Group Package At Cheapest Prices</h6>
-            <div className="df gap8 mt24">
-                <p className ="fs-16 fw5">Makkah : </p>
-                <span className="fs-16 fw5 green-clr">Fajr Al Badea 5</span>
-            </div>
-            <div className="df gap8 mt10">
-                <p className ="fs-16 fw5">Madhina : </p>
-                <span className="fs-16 fw5 green-clr">Karam Al Madhina</span>
-            </div>
-            <div className="place-area mt32">
-               <ul className="place-list text-animation">
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                <li className="df gap11">
-                <Link href={''} className="fs-12 dim-clr fw4 ls05 txt-up df gap8"> <PiUsersThreeBold size={14} className="dim-clr"/> Umrah Visa </Link> <FaArrowRight size={14} className="dim-clr" />
-                </li>
-                </ul>  
-            </div>
-            <div className="Price-details mt32 df fac ">
-                 <div className="">
-                <p className="fs-12 fw4 text-capitalize dim-clr">Starting From</p>
-                <h4 className="fs-22 fw7  mfs-19 green-clr pdt8">₹ 83,000 </h4>
-                </div>
-                <p className="fs-12 fw4 text-capitalize dim-clr pdt20">Per Person</p>
-                <div className="pdl16 mt16">
-                    <button className="fs-14 fw5 cw book-now-btn ">Book Now</button>
-                </div>
-            </div>
-           </div>
-         
-        </div>
-    </div> 
+   ))
+  ): (
+   <p>No packages available.</p>
+  )}  
     </div>
     </div>
      <div className='col-12 col-md-12 col-lg-4'>
@@ -313,7 +97,9 @@ export default function Cards() {
    </section>
    <style jsx>
     {`
-
+.pkg-name{
+height: 100px;
+}
         .mega-hover {
 	position: relative;
 	overflow: hidden;
@@ -365,6 +151,7 @@ export default function Cards() {
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
     padding: 10px;
+    // height: 600px;
     }
         /* Full rgba black background */
     .overlay {

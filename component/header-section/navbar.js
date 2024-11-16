@@ -4,7 +4,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaChevronDown } from "react-icons/fa";
 import SidebarMenu from './mobile-nav';
-
+import { IoHome } from "react-icons/io5";
+import { BiSolidOffer } from "react-icons/bi";
+import { MdOutlineFlightTakeoff } from "react-icons/md";
+import { FaHeadphonesAlt } from "react-icons/fa";
+import { FaUserLarge } from "react-icons/fa6";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -14,7 +18,13 @@ export default function Navbar() {
   const handleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
- 
+  const Menu = [
+    { color: "#D0AB17", path: "/", icon: <IoHome size={24} />, name: "Home" },
+    { color: "#D0AB17", path: "/package", icon: <BiSolidOffer size={24} />, name: "Packages" },
+    { color: "#D0AB17", path: "/service", icon: <MdOutlineFlightTakeoff size={24} />, name: "Services" },
+    { color: "#D0AB17", path: "/", icon: <FaUserLarge size={24} />, name: "Guidance" },
+    { color: "#D0AB17", path: "/contact", icon: <FaHeadphonesAlt size={24} />, name: "Contact Us" },
+  ];
   return (
     <>
       <section className='header'>
@@ -74,7 +84,7 @@ export default function Navbar() {
 
 
     {isMenuOpen &&
-       <SidebarMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen}/>
+       <SidebarMenu Menu={Menu} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen}/>
 }
        
       <style jsx>{`

@@ -1,102 +1,87 @@
 import Image from 'next/image'; // For Next.js optimized image loading
 import Lightbox from "yet-another-react-lightbox";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'; // Import framer-motion
 import "yet-another-react-lightbox/styles.css"; 
-
-  const slides = [
-    {
-      src: "/assets/images/dynamic-gallery/hajji-img.jpg",
-      alt: "Image 1",
-    },
-    {
-      src: "/assets/images/dynamic-gallery/IMG-20241017-WA0024.jpg",
-      alt: "Image 2",
-    },
-    {
-      src: "/assets/images/dynamic-gallery/IMG-20241017-WA0025.jpg",
-      alt: "Image 3",
-    },
-    {
-      src:  "/assets/images/dynamic-gallery/IMG-20241017-WA0026.jpg",
-      alt: "Image 3",
-    },
-    {
-      src:  "/assets/images/dynamic-gallery/IMG-20241017-WA0027.jpg",
-      alt: "Image 3",
-    },
-    {
-      src:    "/assets/images/dynamic-gallery/IMG-20241017-WA0028.jpg",
-      alt: "Image 3",
-    },
-    {
-      src: "/assets/images/dynamic-gallery/IMG-20241017-WA0029.jpg",
-      alt: "Image 3",
-    },
-    {
-      src: "/assets/images/dynamic-gallery/IMG-20241017-WA0030.jpg",
-      alt: "Image 3",
-    },
-    {
-      src:"/assets/images/dynamic-gallery/ladies-grp.jpg",
-      alt: "Image 3",
-    },
-    {
-      src:"/assets/images/dynamic-gallery/ladies-grp2.jpg",
-      alt: "Image 3",
-    },
-    {
-      src: "/assets/images/dynamic-gallery/umrah-img.jpg",
-      alt: "Image 3",
-    },
-    // Add more images as needed
-  ];
+import axios from 'axios';
 
 export default function Gallery() {
-  const [index, setIndex] = useState(-1); // State for tracking current Lightbox image
+  const [lightboxIndex, setLightboxIndex] = useState(-1); // State for tracking current Lightbox image
+  const [gallery, setGallery] = useState([]); // Store gallery data
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${process.env.url}/api/gallery/get-gallery`);
+           // Set new items at the top of the gallery array
+           setGallery(response.data.reverse()); // Reverse data order if the latest is last in array
+        console.log("Gallery data fetched:", response.data);
+      } catch (error) {
+        console.error("Error fetching gallery data:", error.message);
+        if (error.response) {
+          console.error("Server responded with:", error.response.status, error.response.data);
+        } else if (error.request) {
+          console.error("No response received from server");
+        } else {
+          console.error("Unexpected error:", error.message);
+        }
+      }
+    };
+    fetchData();
+  }, []);
+
+  // Generate slides array for Lightbox
+  const slides = gallery.flatMap(item => 
+    item.Images.map(imgSrc => ({ src: imgSrc, alt: item.Title }))
+  );
 
   return (
     <>
+      <div className="container-fluid">
+        <h4 className="cw tac fs-33 mfs-24 fw7 fwb mt70 cb ">
+          Journey of Faith : <span className="logo-clr fwb"> Hajj and Umrah </span> Galleries
+        </h4>
+        
+        <div className="gallery-grid">
+          {gallery.map((items, titleIndex) => (
+            <React.Fragment key={titleIndex}>
+              <p className="fs-24 green-clr fwb pdt24 tac">{items.Title}</p>
+              <div className="df fw fac fjc gap20 mt40">
+                {items.Images.map((imgSrc, imgIndex) => (
+                  <motion.div
+                    key={imgIndex}
+                    className="gallery-item"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setLightboxIndex(titleIndex + imgIndex)} // Open Lightbox on click
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  >
+                    <Image
+                      className="br20"
+                      src={imgSrc}
+                      alt={items.Title}
+                      width={300}
+                      height={200}
+                      style={{ cursor: 'pointer', width: "100%", height: "auto" }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
 
-  <div className="container-fluid">
-      
-      <h4 className="cw tac fs-33 mfs-24 fw7 fwb mt70 cb ">Journey of Faith : <span className="logo-clr fwb"> Hajj and Umrah </span>  Galleries</h4>
-        <p className={`fs-24 green-clr fwb pdt24 tac`}>October Umrah Trip - 2024</p>
-
-      {/* Simple image grid for displaying images */}
-      <div className="df fw fac fjc gap20 mt40">
-        {slides.map((image, index) => (
-          <motion.div
-            key={index}
-            className="gallery-item"
-            whileHover={{ scale: 1.05 }} // Add hover effect to scale image
-            whileTap={{ scale: 0.95 }} // Shrink image slightly when clicked
-            onClick={() => setIndex(index)} // Open Lightbox when image is clicked
-            transition={{ type: "spring", stiffness: 400, damping: 20 }} // Add spring-like effect
-          >
-            <Image
-              className="br20"
-              src={image.src}
-              alt={image.alt}
-              width={300}
-              height={200}
-              style={{ cursor: 'pointer', width:"100%",height:"auto" }} // Add cursor pointer on hover
-            />
-          </motion.div>
-        ))}
+        {/* Lightbox for displaying clicked image */}
+        <Lightbox
+          index={lightboxIndex}
+          slides={slides} // Pass slides array to Lightbox
+          open={lightboxIndex >= 0}
+          close={() => setLightboxIndex(-1)}
+        />
       </div>
 
-      {/* Lightbox for displaying clicked image */}
-      <Lightbox
-        index={index} // Current image index
-        slides={slides} // Pass the slides (images) to Lightbox
-        open={index >= 0} // Open Lightbox when index is valid
-        close={() => setIndex(-1)} // Close Lightbox by resetting index
-      />
-  </div>
       {/* Optional styling for the image grid */}
       <style jsx>{`
-
         .gallery-item {
           flex-basis: 30%;
           max-width: 300px;
