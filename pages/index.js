@@ -11,10 +11,11 @@ import PackageCard from '@/component/packages/package-card'
 import ServiceCards from '@/component/services/service-cards'
 import Testimonial from '@/component/slider/testmonial'
 import WeFeelHappy from '@/component/we-feel-happy'
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 
-export default function Index() {
+export default function Index({banner}) {
   const FaqQus = [
     {
         qus:" What services does Ath-Theen Hajj offer for Hajj and Umrah pilgrims?",
@@ -92,10 +93,39 @@ const schema = {
      <Faqs FaqQus={FaqQus}/>
       {isVisible &&
 
-      <PackageCard closeCard={closeCard}/>
+      <PackageCard banner={banner} closeCard={closeCard}/>
 
     }
       </Layout>
     </>
   )
+}
+export async function getServerSideProps() {
+  try {
+    const res = await fetch(`${process.env.url}/api/banner/get-banner`);
+    const data = await res.json();
+
+    console.log('Fetched banner data:', data); // Log the fetched data
+
+    if (!data || data.length === 0) {
+      return {
+        props:{
+        banner: null,
+      }
+    }
+    }
+
+    return {
+      props: {
+        banner: data[0], // Pass the first banner object as props
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching banner data:', error); // Log any errors
+    return {
+      props: {
+        banner: null, // Return null on error
+      },
+    };
+  }
 }

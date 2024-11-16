@@ -1,7 +1,10 @@
+import axios from 'axios';
 import Image from 'next/image';
 import React, { useState } from 'react';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function EnquiryForm() {
+  const [loading,setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -19,16 +22,30 @@ export default function EnquiryForm() {
     });
   };
 
-const handleSubmit = (e)=>{
+const handleSubmit = async (e)=>{
 e.preventDefault()
+setLoading(true);
+try {
+  
+const response = await axios.post(`${process.env.url}/api/user/enquiry`,formData);
+console.log("SuccesFully Sended",response.data);
 setFormData({
-    name: '',
-    phone: '',
-    email: '',
-    service: '',
-    message:''
+  name: '',
+  phone: '',
+  email: '',
+  service: '',
+  message:''
 })
-console.log("Data",formData)
+toast.success('Your form has been submitted successfully!');
+
+} catch (error) {
+  console.error('Error Response:', error.response ? error.response.data : error.message);
+  alert('Form Submission Is Failed,Please Call This Number 950077 1134 .');
+}
+
+finally{
+  setLoading(false);
+}
 }
 
   return (
@@ -112,14 +129,53 @@ console.log("Data",formData)
             ></textarea>
           </div>
           <div className=''>
-            <button  className='submit-btn fs-19 pd10 cw'>Submit</button>
+            <button  className='submit-btn fs-19 pd10 cw'>
+              {loading ? (<div className="spinner-container">
+            <div className="spinner"></div>
+          </div>):'Submit'}
+            </button>
           </div>
         </form>
         </div>
       </section>
-
+      <ToastContainer />
       <style jsx>
         {`
+
+                 /* Disabled state */
+.btn:disabled {
+  background-color: #B31942; /* Lighter background color when disabled */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+  opacity: 0.6; /* Reduce opacity when disabled */
+}
+
+/* Spinner container */
+.spinner-container {
+  display: flex; /* Center spinner */
+  align-items: center; /* Vertically center spinner */
+  justify-content: center;
+}
+
+/* Spinner styles */
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0);
+  border-left-color: #ffffff; /* Spinner color */
+  border-radius: 50%;
+  width: 20px; /* Spinner size */
+  height: 20px; /* Spinner size */
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+   
          .submit-btn{
          width: 100%;
          background: #006c35;

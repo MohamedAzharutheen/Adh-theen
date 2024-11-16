@@ -8,7 +8,7 @@ export default function Adsposter() {
     <div className="img-box5 mega-hover wow fadeInUp " data-wow-delay="0.3s">
 
 <div className="img-1">
-    <Image class="ads-img w100p"
+    <Image className="ads-img w100p"
         src={"/assets/images/ads-panner/apply-today-img.webp"} width={250} height={506} alt="About Img"/></div>
 
 <div className="box-content">
